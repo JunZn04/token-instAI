@@ -22,26 +22,28 @@ import Requirement from "./Nevigation/Requirment/Requirment";
 
 function App() {
   const [userstate, setUserState] = useState({});
+  const ignorePagesList = ["/", "/login"];
+
   return (
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<Register/>}></Route>
-          <AuthRoute path="/MainPage" component={<MainPage />}></AuthRoute>
-          <Route path="/login" element={<Login setUserState={setUserState} />}></Route>
-          <AuthRoute path="/Upload" component={<Upload />}></AuthRoute>
-          <AuthRoute path="/Bin" component={<Bin />}></AuthRoute>
-          <AuthRoute path="/Download2" component={<Download2 />}></AuthRoute>
-          <AuthRoute path="/Viewupload" component={<Viewupload />}></AuthRoute>
-          <AuthRoute path="/TXTtoIMG" component={<TXTtoIMG />}></AuthRoute>
-          <AuthRoute path="/IMGtoIMG" component={<IMGtoIMG />}></AuthRoute>
-          <AuthRoute path="/CatchTXT" component={<CatchTXT />}></AuthRoute>
-          <AuthRoute path="/Catchimg" component={<Catchimg />}></AuthRoute>
-          <AuthRoute path="/Project" component={<Project />}></AuthRoute>
-          <AuthRoute path="/Requirement" component={<Requirement />}></AuthRoute>
-          <AuthRoute path="/Step" component={<Step />}></AuthRoute>
-          <AuthRoute path="/CreatePage" component={<CreatePage />}></AuthRoute>
-          <AuthRoute path="/Conversation" component={<Conversation />}></AuthRoute>
+          <AuthRoute path="/" component={<Register/>} ignoreList={ignorePagesList}></AuthRoute>
+          <AuthRoute path="/MainPage" component={<MainPage />} ignoreList={ignorePagesList}></AuthRoute>
+          <AuthRoute path="/login" component={<Login setUserState={setUserState} />} ignoreList={ignorePagesList}></AuthRoute>
+          <AuthRoute path="/Upload" component={<Upload />} ignoreList={ignorePagesList}></AuthRoute>
+          <AuthRoute path="/Bin" component={<Bin />} ignoreList={ignorePagesList}></AuthRoute>
+          <AuthRoute path="/Download2" component={<Download2 />} ignoreList={ignorePagesList}></AuthRoute>
+          <AuthRoute path="/Viewupload" component={<Viewupload />} ignoreList={ignorePagesList}></AuthRoute>
+          <AuthRoute path="/TXTtoIMG" component={<TXTtoIMG />} ignoreList={ignorePagesList}></AuthRoute>
+          <AuthRoute path="/IMGtoIMG" component={<IMGtoIMG />} ignoreList={ignorePagesList}></AuthRoute>
+          <AuthRoute path="/CatchTXT" component={<CatchTXT />} ignoreList={ignorePagesList}></AuthRoute>
+          <AuthRoute path="/Catchimg" component={<Catchimg />} ignoreList={ignorePagesList}></AuthRoute>
+          <AuthRoute path="/Project" component={<Project />} ignoreList={ignorePagesList}></AuthRoute>
+          <AuthRoute path="/Requirement" component={<Requirement />} ignoreList={ignorePagesList}></AuthRoute>
+          <AuthRoute path="/Step" component={<Step />} ignoreList={ignorePagesList}></AuthRoute>
+          <AuthRoute path="/CreatePage" component={<CreatePage />} ignoreList={ignorePagesList}></AuthRoute>
+          <AuthRoute path="/Conversation" component={<Conversation />} ignoreList={ignorePagesList}></AuthRoute>
         </Routes>
       </Router>
     </div>
