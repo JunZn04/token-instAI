@@ -52,6 +52,7 @@ const Login = ({ setUserState }) => {
             //setUserState(res.data.user);
             const remove = "Success";
             const id = res.data.replace(remove, "");
+            localStorage.setItem("token", id); //將userid模擬為登入後的token
             console.log(id);
             navigate("/Project", { state: id, replace: true });
           }
